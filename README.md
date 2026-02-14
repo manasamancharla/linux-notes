@@ -18,3 +18,6 @@ You can find the full setup guide [here](setup/docker-linux-environment.md)
 
 ## Notes 
 If you're also learning Linux, feel free to explore or use them.
+
+### Table of Contents
+1. [Linux Basics](01-linux-basics/README.md)
