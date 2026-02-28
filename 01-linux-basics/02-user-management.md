@@ -61,4 +61,67 @@ userdel username
 ```
 To remove a user and their home directory:
 ```bash
-userdel -r username  
+userdel -r username
+```
+
+##  Working with Groups
+### Creating Groups
+```bash
+groupadd groupname
+```
+
+### Adding Users to Groups
+```bash
+gpasswd -a username groupname 
+```
+```bash
+gpasswd -M username,username,username groupname 
+```
+
+Using `usermod`
+```bash
+usermod -aG groupname username
+```
+Here `a` is append and `G` is set supplementary group. Without `a` the command wipes out other supplementary groups.  
+
+### Adding a User to Sudo Group
+
+```bash
+usermod -aG sudo username
+```
+## getent (get entries)
+It is used to retrieve entries from system databases defined in `/etc/nsswitch.conf`
+
+```bash
+getent database key
+```
+## Working with passwd and group files
+### View passwd file contents
+
+```bash
+cat /etc/passwd
+```
+Using `getent`
+```bash
+getent passwd
+```
+
+### View group file contents
+
+```bash
+cat /etc/group
+```
+Using `getent`
+```bash
+getent group
+```
+
+
+### Check user's groups
+
+```bash
+id username
+```
+
+
+
