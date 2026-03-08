@@ -42,6 +42,7 @@ User (rwx), Group (r-x), Others (r-x)
 ```bash
 chmod 755 filename  
 ```
+**`ls -l` lists files and directories in long (detailed) format.**
 
 ### Default Permissions: `umask`
 - It controls the default permissions for new files and directories.
