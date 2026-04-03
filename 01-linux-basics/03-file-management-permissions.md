@@ -74,3 +74,79 @@ chown user filename
 ```bash
 chgrp group filename 
 ```
+## Archiving and Compression
+- `tar` is used for creating and extracting archives.
+
+| Option | Description |
+|-----|-------------|
+| `c` | create archive |
+| `v` | verbose |
+| `f` | filename of archive |
+| `x` | extract archive |
+| `z` | gzip compression |
+| `j` | bzip2 compression |
+| `J` | xz compression |
+
+Naming conventions for easy understanding, not rules enforced by the system.
+
+### Archiving and extracting with `tar`
+```bash
+tar -cvf archive.tar filename_or_directory 
+tar -xvf archive.tar 
+```
+
+### Archiving and extracting with `tar` and gzip compression
+```bash
+tar -czvf archive.tar.gz filename_or_directory 
+tar -xzvf archive.tar.gz 
+```
+
+### gzip and gunzip
+Compresses and decompresses individual files (not directories)
+
+| Option | Description |
+|-----|-------------|
+| `k` | Keep the original file |
+
+```bash
+gzip -k file.txt # file.txt.gz
+gunzip file.txt.gz
+```
+
+### bzip2 and bunzip2
+Provides better compression than gzip, but slower.
+
+| Option | Description |
+|-----|-------------|
+| `k` | Keep the original file |
+
+```bash
+bzip2 file.txt # file.txt.bz2
+bunzip2 file.txt.bz2
+```
+
+### xz and unxz
+Provides highest compression ratio, but slowest compression speed.
+
+| Option | Description |
+|-----|-------------|
+| `k` | Keep the original file |
+
+```bash
+xz file.txt # file.txt.xz
+unxz file.txt.xz
+```
+
+### zip and unzip
+Zip is a cross-platform format
+
+| Option | Description |
+|-----|-------------|
+| `r` | recursive (used for directories) |
+| `d` | destination path (unzip) |
+
+
+```bash
+zip -r archive.zip directory/
+unzip archive.zip -d .
+```
